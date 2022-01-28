@@ -1,0 +1,35 @@
+<?php
+
+include '../db.php';
+
+$con = mysqli_connect($host, $userName, $userPassword);
+$db = mysqli_select_db($con, $dataBaseName);
+
+class ProductImage
+{
+    // Properties
+
+    public $image;
+}
+
+$sql = "SELECT product_info.product_id, product_info.title, product_info.description, product_info.price,product_info.altPrice, product_images.is_primary, product_images.file_name FROM product_info, product_images, best_value WHERE product_info.product_id = product_images.product_id AND product_images.is_primary = TRUE AND product_info.product_id = best_value.product_id;";
+$result = mysqli_query($con, $sql);
+
+$images = [];
+
+if (mysqli_num_rows($result) > 0) {
+
+    while ($row = mysqli_fetch_assoc($result)) {
+
+        $temp = new ProductImage();
+        $temp->image = $row["img"];
+       
+        $images[]  =  $temp;
+    }
+} else {
+    //No record in database
+}
+
+echo json_encode($images);
+mysqli_close($con);
+?>
