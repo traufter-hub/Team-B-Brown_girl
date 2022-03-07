@@ -1,0 +1,6 @@
+/*################ Animations ################*/
+a {
+	transition-property: color;
+	transition-duration: 399ms;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}

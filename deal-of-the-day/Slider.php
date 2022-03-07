@@ -19,7 +19,7 @@
             <div class="Title_container">
                 <h4>*PRODUCT DESCRIPTION*</h4>
                 <div class="Details_container">
-                    <h5> &#x20B9 XXX &nbsp; <strike>&#x20B9 XXX</strike></h5>
+                    <h5> &#x20B9 XXX &nbsp; <strike>&#x20B9; XXX</strike></h5>
                 </div>
             </div>
         </div>
@@ -29,7 +29,7 @@
             <div class="Title_container">
                 <h4>*PRODUCT DESCRIPTION*</h4>
                 <div class="Details_container">
-                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9 XXX</strike></h5>
+                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9; XXX</strike></h5>
                 </div>
             </div>
         </div>
@@ -39,7 +39,7 @@
             <div class="Title_container">
                 <h4>*PRODUCT DESCRIPTION*</h4>
                 <div class="Details_container">
-                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9 XXX</strike></h5>
+                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9; XXX</strike></h5>
                 </div>
             </div>
         </div>
@@ -48,7 +48,7 @@
             <div class="Title_container">
                 <h4>*PRODUCT DESCRIPTION*</h4>
                 <div class="Details_container">
-                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9 XXX</strike></h5>
+                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9; XXX</strike></h5>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
             <div class="Title_container">
                 <h4>*PRODUCT DESCRIPTION*</h4>
                 <div class="Details_container">
-                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9 XXX</strike></h5>
+                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9; XXX</strike></h5>
                 </div>
             </div>
         </div>
@@ -66,7 +66,7 @@
             <div class="Title_container">
                 <h4>*PRODUCT DESCRIPTION*</h4>
                 <div class="Details_container">
-                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9 XXX</strike></h5>
+                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9; XXX</strike></h5>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@
             <div class="Title_container">
                 <h4>*PRODUCT DESCRIPTION*</h4>
                 <div class="Details_container">
-                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9 XXX</strike></h5>
+                    <h5> &#x20B9 XXX &nbsp;<strike>&#x20B9; XXX</strike></h5>
                 </div>
             </div>
         </div>

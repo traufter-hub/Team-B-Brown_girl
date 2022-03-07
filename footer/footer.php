@@ -13,14 +13,23 @@ ul {
     position: relative;
     z-index: 2;
 }
-
-.footer-text p {
+.footer-text-link{
+	color: #a8e3ff;
+	font-size: initial;
+}
+.footer-text-link:hover{
+	color: #ff5e14;
+}
+.footer-text p  {
     margin-bottom: 14px;
     font-size: 16px;
     color: #ffffff;
     line-height: 28px;
 }
-
+.footer-social-icon {
+	display: flex;
+    flex-direction: column;
+}
 .footer-social-icon a {
     color: #fff;
     font-size: 16px;
@@ -48,6 +57,7 @@ ul {
 }
 
 .footer-widget-heading h3 {
+	text-align: left;
     color: #fff;
     font-size: 20px;
     font-weight: 600;
@@ -67,7 +77,7 @@ ul {
 
 .footer-widget ul li {
     display: inline-block;
-    width: 50%;
+    /* width: 50%; */
     margin-bottom: 12px;
 }
 
@@ -76,6 +86,11 @@ ul {
 }
 
 .footer-widget ul li a {
+
+	display: flex;
+    align-items: center;
+    flex-direction: row;
+	font-size: initial;
     color: #ffffff;
     text-decoration: none;
     text-transform: capitalize;
@@ -108,56 +123,128 @@ ul {
 .footer-menu li:hover a {
     color: #ff5e14;
 }
-
 .footer-menu li a {
     font-size: 18px;
     text-decoration: none;
     color: #ffffff;
+}
+.p-0{
+	display: flex;
+flex-direction: column;}
+
+.footer-widget{
+	margin-left: 10px;
+}
+
+.col-xl-3,.col-xl-2{
+	padding: 0px;
+}
+
+.footer-grid{
+
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+@media screen and (max-width: 1998px){
+
+	.footer-grid{
+		display: grid;
+		justify-content: space-around;
+	 grid-template-columns: auto auto auto auto auto;
+	}
+}
+@media screen and (max-width: 1024px){
+
+.footer-grid{
+	display: flex;
+justify-content: space-between;
+flex-wrap: wrap;;
+
+}
+}
+@media screen and (max-width: 991px){
+.footer-grid{
+	display: flex;
+justify-content: space-between;
+flex-wrap: wrap;}
+}
+@media screen and (max-width: 768px){
+.footer-grid{
+	display: grid;
+ grid-template-columns: auto auto auto;
+}
+}
+@media screen and (max-width: 425px){
+
+
+.footer-grid{
+	display: grid;
+ grid-template-columns: auto auto;
+}
+}
+@media screen and (max-width: 300px){
+
+.footer-grid{
+	display: flex;
+}}
+
+
+
+@media (min-width: 768px){
+.col-md-6 {
+    /* width: 100%!important; */
+}
 }
 </style>
 <footer class="footer-section">
     <!--footer start-->
     <div class="container-fluid">
         <div class="footer-content pt-5 pb-5">
-            <div class="row">
+            <div class=" footer-grid">
+
                 <div class="col-xl-2 col-lg-2 col-md-6 mb-30 pl-xl-5 pl-sm-0">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
                             <h3>About</h3>
                         </div>
                         <ul class="p-0">
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact&nbsp;Us</a></li>
+                            <li><a href="#">About&nbsp;Us</a></li>
                             <li><a href="#">Stories</a></li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-xl-2 col-lg-2 col-md-6 mb-30">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
                             <h3>Help</h3>
                         </div>
                         <ul class="p-0">
-                            <li><a href="#">Track your order</a></li>
+                            <li><a href="#">Track&nbsp;your&nbsp;order</a></li>
                             <li><a href="#">Payments</a></li>
                             <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Cancellation Return</a></li>
+                            <li><a href="#">Cancellation&nbsp;Return</a><br></li>
                         </ul>
                     </div>
+				<br>
                 </div>
+
                 <div class="col-xl-2 col-lg-2 col-md-6 mb-30">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
                             <h3>Policy</h3>
                         </div>
                         <ul class="p-0">
-                            <li><a href="#">Return Policy</a></li>
-                            <li><a href="#">Term of use</a></li>
+                            <li><a href="#">Return&nbsp;Policy</a></li>
+                            <li><a href="#">Term&nbsp;of&nbsp;use</a></li>
                             <li><a href="#">Security</a></li>
                             <li><a href="#">Privacy</a></li>
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-xl-3 col-lg-2 col-md-6 mb-30">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
@@ -165,31 +252,33 @@ ul {
                         </div>
                         <ul class="p-0">
                             <div class="footer-social-icon">
-                                <li><a href="#"><i class="fab fa-facebook-f facebook-bg mx-2"></i>Facebook</a></li>
-                                <li><a href="#"><i class="fab fa-instagram google-bg mx-2"></i>Instagram</a></li>
-                                <li><a href="#"><i class="fab fa-youtube google-bg mx-2"></i>Youtube</a></li>
-                                <li><a href="#"><i class="fab fa-twitter twitter-bg mx-2"></i>Twitter</a></li>
+                                <li><a href="#"><span><i class="fab fa-facebook-f facebook-bg mx-2"></i></span><span>Facebook</span></a></li>
+                                <li><a href="#"><span><i class="fab fa-instagram google-bg mx-2"></span></i><span>Instagram</span></a></li>
+                                <li><a href="#"><span><i class="fab fa-youtube google-bg mx-2"></span></i><span>Youtube</span></a></li>
+                                <li><a href="#"><span><i class="fab fa-twitter twitter-bg mx-2"></span></i><span>Twitter</span></a></li>
                             </div>
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-xl-3 col-lg-3 col-md-6 mail-section mb-30">
                     <div class="footer-widget ml-lg-5">
                         <div class="footer-widget-heading">
-                            <h3>Mail Us</h3>
+                            <h3>Mail&nbsp;Us</h3>
                         </div>
                         <div class="footer-text mb-25">
-                            <a href="">mailus@gmail.com</a>
+                            <a class="footer-text-link" href="">mailus@gmail.com</a>
                         </div>
                         <div class="footer-widget-heading my-5">
                             <h3>FAQs</h3>
                         </div>
                         <div class="footer-text mb-25">
-                            <p>Got questions ? call us 24/7</p>
-                            <p>(+91) 9990056278</p>
+                            <p>Got&nbsp;questions&nbsp;? call&nbsp;us&nbsp;24/7</p>
+                            <p>(+91)&nbsp;9990056278</p>
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div> <!-- Footer section ends-->

@@ -1,0 +1,238 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Wishlist Style */
+#container{
+   margin: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+}
+.h2{
+  font-family: "Tenor Sans", sans-serif!important;
+  margin-left: 42px;
+}
+.container {
+  margin-left: 100px;
+  margin-right: 100px;
+  margin-top: 50px;
+  font-family: "Tenor Sans", sans-serif;
+}
+
+.Cards {
+  display: inline-block;
+  width: 250px;
+  padding: 10px;
+  background-color: white;
+  transition: transform 0.2s;
+  border-radius: 5px;
+  margin: 10px;
+}
+.image{
+   border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.image img {
+  margin: auto;
+  display: block;
+  object-fit: contain;
+  overflow: hidden;
+      /* max-width: 100%; */
+    max-height: 100%;
+  background-color: white;
+  
+  margin-bottom: 25px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.Cards:hover {
+  -ms-transform: scale(1.2); /* IE 9 */
+  -webkit-transform: scale(1.2); /* Safari 3-8 */
+  transform: scale(1.2);
+}
+.Detail_container{
+  display: inline;
+}
+
+.Title_container p{
+  text-align: center;
+  padding: 5px 5px;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 1;
+}
+.Detail_container p{
+  float: left;
+  width:50px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 0;
+  margin-left: 50px;
+}
+.Price_container p{
+  float: right;
+  width:50px;
+  text-decoration-line: line-through;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 0;
+  margin-right: 50px;
+}
+.overlay {
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 10%;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100px;
+}
+
+.image:hover .overlay {
+  opacity: 1;
+  margin-left: 5%;
+  margin-right: 5%;
+  transition: 0.5s;
+}
+
+.overlay .btn-secondary {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.container h2 {
+  color: black;
+  text-align: center;
+  padding: 10px 20px;
+  font-weight: normal;
+}
+@media screen and (min-width: 250px) {
+  .Cards {
+    width: 200px;
+  }
+     .image{
+   border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  .Title_container p {
+    font-size: 14px;
+  }
+  .Detail_container p{
+    width:35px;
+    font-size: 14px;
+    margin-left: 25px;
+  }
+  .Price_container p{
+    width:35px;
+    font-size: 9px;
+    margin-right: 25px;
+  }
+}
+@media screen and (min-width: 500px) {
+  .Cards {
+    width: 150px;
+  }
+     .image{
+   border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 150px;
+  width: 150px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+@media screen and (min-width: 900px) {
+  .Cards {
+    width: 200px;
+  }
+     .image{
+   border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+  .Title_container p {
+    font-size: 14px;
+  }
+  .Detail_container p{
+    width:35px;
+    font-size: 14px;
+    margin-left: 25px;
+  }
+  .Price_container p{
+    width:35px;
+    font-size: 9px;
+    margin-right: 25px;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .Cards {
+    width: 160px;
+  }
+
+  .Title_container p{
+    font-size: 16px;
+  }
+  .Detail_container p{
+    width:40px;
+    font-size: 16px;
+    margin-left: 35px;
+  }
+  .Price_container p{
+    width:40px;
+    font-size: 11px;
+    margin-right: 35px;
+  }
+}
+@media screen and (min-width: 880px) {
+  .Cards {
+    width: 235px;
+  }
+  .Title_container p{
+    font-size: 18px;
+  }
+  .Detail_container p{
+    width:45px;
+    font-size: 18px;
+    margin-left: 50px;
+  }
+  .Price_container p{
+    width:45px;
+    font-size: 13px;
+    margin-right: 50px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .Cards {
+    width: 250px;
+  }
+  .Title_container p{
+    font-size: 20px;
+  }
+  .Detail_container p{
+    width:50px;
+    font-size: 20px;
+    margin-left: 50px;
+  }
+  .Price_container p{
+    width:50px;
+    font-size: 15px;
+    margin-right: 50px;
+  }
+}

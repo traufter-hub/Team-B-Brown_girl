@@ -1,62 +1,3 @@
-/*################ Navigation Bar ################*/
-const linkButton = document.querySelector("#linkButton");
-const listBox = document.querySelector("#linkBox");
-const logoDiv = document.querySelector("#logoDiv");
-const navButtons = document.querySelector("#navButtons");
-const searchBox = document.querySelector("#searchBox");
-const mobileSearch = document.querySelector("#mobileSearch");
-const listMore = document.querySelector("#listMore");
-window.addEventListener("resize", hideList);
-
-let linkButtonFlip = false;
-linkButton.addEventListener("click", function () {
-	hideNavItem(listBox, linkButtonFlip);
-	hideNavItem(logoDiv, !linkButtonFlip);
-	hideNavItem(navButtons, !linkButtonFlip);
-
-	if (linkButtonFlip) {
-		linkButtonFlip = false;
-		listMore.classList.remove("flip");
-	} else {
-		linkButtonFlip = true;
-		listMore.classList.add("flip");
-	}
-});
-
-var x = 0;
-//Below code is for small screen size
-function hideList() {
-	const h = window.innerHeight;
-	const w = window.innerWidth;
-	//console.log(w);
-	if (w < h && w < 750) {
-		hideNavItem(linkButton, false);
-		hideNavItem(listBox, true);
-		hideNavItem(searchBox, true);
-		hideNavItem(mobileSearch, false);
-	} else {
-		hideNavItem(linkButton, true);
-		hideNavItem(listBox, false);
-
-		hideNavItem(logoDiv, false);
-		hideNavItem(navButtons, false);
-		hideNavItem(searchBox, false);
-		hideNavItem(mobileSearch, true);
-	}
-}
-
-function hideNavItem(element, hide) {
-	if (hide) {
-		element.classList.add("none");
-		element.classList.remove("flex");
-	} else {
-		element.classList.add("flex");
-		element.classList.remove("none");
-	}
-}
-hideList();
-/*################ Navigation Bar END ################*/
-
 /*################ Carousel Header ################*/
 
 //fetching carousel images and adding them to page
@@ -67,7 +8,7 @@ $.ajax({
 	url: "./carousel/getCarouselImages.php",
 	method: "GET",
 	dataType: "JSON",
-	success: function (data) {
+	success: function(data) {
 		let carouseHtml = "";
 		let indicatorHtml = "";
 		let count = 0;
@@ -121,8 +62,7 @@ function sSlide() {
 		arrows: false,
 		dots: false,
 		pauseOnHover: false,
-		responsive: [
-			{
+		responsive: [{
 				breakpoint: 768,
 				settings: {
 					slidesToShow: 4,
@@ -139,10 +79,10 @@ function sSlide() {
 }
 
 // The data/time we want to countdown to
-var countDownDate = new Date("Jan 30 2022 16:37:52").getTime();
+var countDownDate = new Date("Feb 14 2022 23:37:52").getTime();
 
 // Run myfunc every second
-var myfunc = setInterval(function () {
+var myfunc = setInterval(function() {
 	var now = new Date().getTime();
 	var timeleft = countDownDate - now;
 
@@ -180,7 +120,7 @@ function fetchDealOfTheDay() {
 		url: "./deal-of-the-day/getDealOfTheDay.php",
 		method: "GET",
 		dataType: "JSON",
-		success: function (data) {
+		success: function(data) {
 			data.forEach((value) => {
 				//console.log(value);
 				productHtml +=
@@ -231,7 +171,7 @@ function fetchTrending() {
 		url: "./trending-style/getTrendingImage.php",
 		method: "GET",
 		dataType: "JSON",
-		success: function (data) {
+		success: function(data) {
 			let Tcount = 0;
 			const wh = [
 				"w-2 h-1",
@@ -278,7 +218,7 @@ function fetchBestValue() {
 		url: "./best-value/getBestValue.php",
 		method: "GET",
 		dataType: "JSON",
-		success: function (data) {
+		success: function(data) {
 			prodRateArr = [];
 			data.forEach((value) => {
 				prodRateArr.push(value.product_id);
@@ -291,9 +231,9 @@ function fetchBestValue() {
 					value.image +
 					'"></a>' +
 					' <div class="overlay">' +
-					'   <button type="button" class="btn btn-secondary" title="wishlist">' +
-					'      <i class="bi bi-heart"></i></button>' +
-					' <button type="button" class="btn btn-secondary" title="cart">' +
+					'   <button onclick="addProductToWishList(this.id)" id = ' + value.product_id + ' type="button" class="btn btn-secondary" title="wishlist">' +
+					'      <i class="bi bi-heart" ></i></button>' +
+					' <button onclick="addProductToCart(this.id)" id = ' + value.product_id + ' type="button" class="btn btn-secondary" title="cart">' +
 					'   <i class="bi bi-bag"></i></button>' +
 					" </div>" +
 					"</div>" +
@@ -304,10 +244,10 @@ function fetchBestValue() {
 					' <h4 class="prodTitle">' +
 					value.title +
 					"</h4>" +
-					' <div class="Details_container">' +
+					' <div class="Details_container priceTagDiv">' +
 					"   <h5>&#x20B9;" +
 					value.price +
-					"</h5>" +
+					"</h5>" + "&nbsp;<h6 class='priceStrike' ><strike>&#x20B9;" + value.altPrice + "</strike></h6>" +
 					" </div>" +
 					"</div>" +
 					"</div>";
@@ -324,6 +264,7 @@ fetchBestValue();
 function getRating() {
 	const full = '<i class="fas fa-star"></i>';
 	const half = '<i class="far fa-star"></i>';
+	//console.log(value);
 	prodRateArr.forEach((value) => {
 		// console.log(value);
 		$.ajax({
@@ -333,9 +274,10 @@ function getRating() {
 				pid: value,
 			},
 			dataType: "JSON",
-			success: function (data) {
+			success: function(data) {
 				let element = "";
-				let count = data;
+				let count = parseInt(data) + 1;
+				//console.log(data);
 				for (let i = 0; i < 5; i++) {
 					if (count > 1) {
 						element += full;
@@ -344,8 +286,32 @@ function getRating() {
 						element += half;
 					}
 				}
-				// console.log(value, data, element);
+				//console.log(value, data, element);
 				document.getElementById(value + "Rate").innerHTML = element;
+				let color = 'black';
+				ch = parseInt(data) + 1;
+
+				switch (ch) {
+					case 1:
+						color = 'FFFA4D';
+						break;
+					case 2:
+						color = 'FFBC80';
+						break;
+					case 3:
+						color = 'FF9F45';
+						break;
+					case 4:
+						color = 'F76E11';
+						break;
+					case 5:
+						color = 'FC4F4F';
+						break;
+					default:
+
+				}
+				//console.log(ch, color);
+				document.getElementById(value + "Rate").style = "color:#" + color;
 			},
 		});
 	});
@@ -384,7 +350,7 @@ function fetchTopPics() {
 		url: "./top-pics/getTopPics.php",
 		method: "GET",
 		dataType: "JSON",
-		success: function (data) {
+		success: function(data) {
 			TopProdRateArr = [];
 			data.forEach((value) => {
 				// console.log(value.product_id);
@@ -405,10 +371,11 @@ function fetchTopPics() {
 					'  <i class="far fa-star"></i></div>' +
 					'   <h4 class="prodTitle">' +
 					value.title +
-					"</h4>" +
-					"  <h5>&#x20B9;" +
+					' <div class="Details_container priceTagDiv">' +
+					"   <h5>&#x20B9;" +
 					value.price +
-					"</h5>" +
+					"</h5>" + "&nbsp;<h6 class='priceStrike' ><strike>&#x20B9;" + value.altPrice + "</strike></h6>" +
+					" </div>" +
 					"</div></a>";
 			});
 			topPics.innerHTML = topPicsHtml;
@@ -431,9 +398,9 @@ function getTopRating() {
 				pid: value,
 			},
 			dataType: "JSON",
-			success: function (data) {
+			success: function(data) {
 				let element = "";
-				let count = data;
+				let count = parseInt(data) + 1;
 				//console.log(data, value);
 				for (let i = 0; i < 5; i++) {
 					if (count > 1) {
@@ -447,6 +414,30 @@ function getTopRating() {
 				document.querySelector("#topRate" + value).innerHTML =
 					element;
 				//console.log("#topRate" + value);
+				let color = 'black';
+				ch = parseInt(data);
+
+				switch (ch) {
+					case 1:
+						color = 'FFFA4D';
+						break;
+					case 2:
+						color = 'FFBC80';
+						break;
+					case 3:
+						color = 'FF9F45';
+						break;
+					case 4:
+						color = 'F76E11';
+						break;
+					case 5:
+						color = 'FC4F4F';
+						break;
+					default:
+
+				}
+				//console.log(ch, color);
+				document.querySelector("#topRate" + value).style = "color:#" + color;
 			},
 		});
 	});
@@ -459,12 +450,52 @@ $.ajax({
 	url: "./coming-soon/getComingSoon.php",
 	method: "GET",
 	dataType: "JSON",
-	success: function (data) {
+	success: function(data) {
 		//console.log(data[0].image);
-		comingSoonImage.innerHTML = ' <img src=".'+data[0].image+'" alt="Coming Soon">'
+		comingSoonImage.innerHTML = ' <img src=".' + data[0].image + '" alt="Coming Soon">'
 	},
 });
 /*################ Coming Soon END ################*/
 
 /*################ Footer ################*/
 /*################ Footer END ################*/
+
+//funtion to add product to whishlist
+function addProductToWishList(prodId) {
+	//console.log(prodId);
+	$.ajax({
+		url: "./wishlist/addToList.php",
+		method: "POST",
+		data: {
+			productId: prodId
+		},
+		dataType: "JSON",
+		success: function(data) {
+			if (data.invalidProduct) {
+				alert("Invalid Product")
+			}
+			if (data.added) {
+				alert("Added to wishlist")
+			}
+			if (data.alreadyAdded) {
+				alert("Already Added to wishlist")
+			}
+			//console.log(data);
+		},
+	});
+}
+//funtion to add product to cart
+function addProductToCart(product_id) {
+	$.ajax({
+		url: "./checkout-page/php/addToCart.php",
+		method: "POST",
+		data: {
+			productId: product_id
+		},
+		dataType: "JSON",
+		success: function(data) {
+			//console.log(data);
+			alert("Product added to cart");
+		},
+	});
+}
