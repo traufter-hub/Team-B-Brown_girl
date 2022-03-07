@@ -24,7 +24,7 @@ echo json_encode($parsl);
 function selectTableForProduct()
 {
     global $mysqli;
-    $sql = "SELECT product_info.*,orders.orderTime,orders.method,orders.status,orders.arival FROM product_info,orders WHERE orders.product_id = product_info.product_id";
+    $sql = "SELECT product_info.*,orders.order_amount,orders.orderTime,orders.method,orders.status,orders.arival FROM product_info,orders WHERE orders.product_id = product_info.product_id";
     $return = [];
     if ($result = $mysqli->query($sql)) {
         while ($obj = $result->fetch_object()) {

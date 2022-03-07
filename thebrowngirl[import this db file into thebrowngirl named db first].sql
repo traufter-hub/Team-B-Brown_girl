@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2022 at 03:10 AM
+-- Generation Time: Mar 07, 2022 at 12:52 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -110,7 +110,10 @@ CREATE TABLE `checkoutlist` (
 INSERT INTO `checkoutlist` (`product_id`, `user_id`, `amount`) VALUES
 ('p1', 37, 1),
 ('p2', 37, 1),
-('p4', 37, 1);
+('p4', 37, 1),
+('p7', 1, 1),
+('p8', 1, 1),
+('p9', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -282,6 +285,7 @@ CREATE TABLE `orders` (
   `order_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `product_id` varchar(50) NOT NULL,
+  `order_amount` double NOT NULL,
   `address` text NOT NULL,
   `orderTime` varchar(50) NOT NULL,
   `method` varchar(10) NOT NULL,
@@ -293,20 +297,9 @@ CREATE TABLE `orders` (
 -- Dumping data for table `orders`
 --
 
-INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `address`, `orderTime`, `method`, `status`, `arival`) VALUES
-(30, 1, 'p3', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 11:59:05am', '', 'NA', 'NA'),
-(31, 1, 'p9', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:38:28pm', 'cod', 'NA', 'NA'),
-(32, 1, 'p3', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:41:29pm', 'cod', 'NA', 'NA'),
-(33, 1, 'p4', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:48:40pm', 'card', 'NA', 'NA'),
-(34, 1, 'p4', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:54:15pm', 'cod', 'NA', 'NA'),
-(35, 1, 'p4', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:54:45pm', 'card', 'NA', 'NA'),
-(36, 1, 'p4', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:56:05pm', 'card', 'NA', 'NA'),
-(37, 1, 'p4', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:56:41pm', 'net', 'NA', 'NA'),
-(38, 1, 'p4', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:58:28pm', 'cod', 'NA', 'NA'),
-(39, 1, 'p4', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 12:58:59pm', 'cod', 'NA', 'NA'),
-(40, 1, 'p4', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 01:00:24pm', 'cod', 'NA', 'NA'),
-(41, 1, 'p9', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-04 03:08:44pm', 'upi', 'NA', 'NA'),
-(42, 1, 'p9', '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-06 06:11:11pm', 'upi', 'NA', 'NA');
+INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `order_amount`, `address`, `orderTime`, `method`, `status`, `arival`) VALUES
+(63, 1, 'p4', 10170, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-07 12:28:09pm', 'net', 'NA', 'NA'),
+(64, 1, 'p4', 10170, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-07 12:29:34pm', 'card', 'NA', 'NA');
 
 -- --------------------------------------------------------
 
@@ -740,7 +733,7 @@ ALTER TABLE `offers`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `product_images`

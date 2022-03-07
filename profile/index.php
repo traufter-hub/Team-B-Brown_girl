@@ -84,6 +84,14 @@
         .card {
             margin: 10px !important;
         }
+
+        .flexD {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            align-content: center;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
@@ -325,13 +333,26 @@
                     let prod = ' <a style="text-decoration: none;"' +
                         'href = "' + site + '/ProdDescPage/?pid=' + product.product.product_id + '" > ' +
                         '            <div class="card" style="width: 18rem;">' +
-                        '<img class="card-img-top imgInProcCard" src="' + site + product.images.file_name + '" alt="Card image cap"><div class="card-body"><h5>' + product.product.title + '</h5><div class="flex"><h5>₹' + product.product.price + '</h5>&nbsp;<h6><strike>₹' + product.product.altPrice + '</strike></h6></div></div><h5>Ordered on : ' + product.product.orderTime + '</h5></div></a>';
+                        '<img class="card-img-top imgInProcCard" src="' + site + product.images.file_name + '" alt="Card image cap"><div class="card-body"><h5>' + product.product.title + '</h5><div class="flex flexD"><h5>₹' + product.product.order_amount + '</h5></div></div><h5 class="subInfo">Status : ' + product.product.orderTime + '</h5><h5 class="subInfo">Status : ' + product.product.status + '</h5><h5 class="subInfo">Payment method : ' + getPayment(product.product.method) + '</h5><h5 class="subInfo">Arriva : ' + product.product.arival + '</h5></div></a>';
                     //console.log(prod);
                     ordersDiv.innerHTML += prod;
                 });
                 //console.log(prods);
             }
         }, );
+    }
+
+    function getPayment(method) {
+        if (method == 'upi')
+            return "UPI";
+        else if (method == 'net')
+            return "Net Banking";
+        else if (method == 'card')
+            return "Card";
+        else if (method == 'cod')
+            return "COD";
+        else
+            return "NA"
     }
 </script>
 
