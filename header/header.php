@@ -1,6 +1,5 @@
 <?php
 error_reporting(E_ALL ^ E_NOTICE);
-include('../function.php');
 ?>
 <style>
     :root {
@@ -596,7 +595,7 @@ include('../function.php');
 </style>
 <div class="blue">
     <div class="navBar flex">
-        <div id="logoDiv" class="logoDiv flex"><a href="http://localhost/thebrowngirl/"><span>LOGO</span></a></div>
+        <div id="logoDiv" class="logoDiv flex"><a href='<?php echo $domain; ?>' ;><span>LOGO</span></a></div>
         <div class="none" id="linkButton">
             <i id="listMore" class="fas fa-chevron-down"></i>
         </div>
@@ -850,7 +849,8 @@ include('../function.php');
 
 
     //Change this domain to domian of site
-    const site = 'http://localhost/thebrowngirl';
+    const site = '<?php global $domain;
+                    echo $domain; ?>';
 
     const loginNavIcon = document.getElementById("loginNavIcon");
     const tab1 = document.querySelector("#tab1");
@@ -865,6 +865,8 @@ include('../function.php');
     }
 
     function LoginModel() {
+
+
 
         if (user_id > -1) {
 
@@ -1010,7 +1012,7 @@ include('../function.php');
                         let uPassword = signUpPassword.value;
 
                         $.ajax({
-                            url: loginUrl,
+                            url: site + "/login/login.php",
                             method: "POST",
                             data: {
                                 email: uEmail,
@@ -1090,6 +1092,7 @@ include('../function.php');
     let uPassword;
 
     function loginFunction() {
+
         uEmail = loginUserId.value;
         uPassword = loginUserPassword.value;
         console.log(uEmail, uPassword);
@@ -1097,7 +1100,7 @@ include('../function.php');
             //alert("Please input your email and password");
         } else {
             $.ajax({
-                url: loginUrl,
+                url: site + "/login/login.php",
                 method: "POST",
                 data: {
                     email: uEmail,

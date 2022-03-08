@@ -44,20 +44,21 @@ function sendMsg()
         $_SESSION["otp"] = new OTP();
     }
 
-    $sid = "AC278a8d0b93e81ccf415b1031e58902cb";
-    $token = "033d7a1d5e919db58ae7076039dc6134";
+    global $sid;
+    global $token;
+    global $from;
+
     $client = new Twilio\Rest\Client($sid, $token);
-    $from = "+19036023350";
 
 
-    // $message = $client->messages
-    //     ->create(
-    //         "+91" . selectUserData()->mobile, // to
-    //         [
-    //             "body" => "Your OTP to verify your account is : " . $_SESSION["otp"]->otp,
-    //             "from" => $from
-    //         ]
-    //     );
+    $message = $client->messages
+        ->create(
+            "+91" . selectUserData()->mobile, // to
+            [
+                "body" => "Your OTP to verify your account is : " . $_SESSION["otp"]->otp,
+                "from" => $from
+            ]
+        );
 
     $json->timer = $countdown;
     $json->sended = 0;
@@ -69,7 +70,8 @@ function sendMsg()
 
     //FOR TESTING ONLY
     $json->other =   ([
-        $_SESSION["otp"],
+        // $_SESSION["otp"],
+        0
         //$message->status
     ]);
 }

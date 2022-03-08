@@ -1,6 +1,8 @@
 <?php
-    session_start();
-    $session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
+include('./function.php');
+
+
+$session_value = (isset($_SESSION['user_id'])) ? $_SESSION['user_id'] : '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +17,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- icons -->
     <script src="https://kit.fontawesome.com/da9dabfa40.js" crossorigin="anonymous"></script>
@@ -34,7 +36,7 @@
 
 
     <link rel="stylesheet" href="./styles/landingPage.css">
-<link rel="stylesheet" href="./styles/animations.css">
+    <link rel="stylesheet" href="./styles/animations.css">
 
     <title>The Brown Girl</title>
 </head>

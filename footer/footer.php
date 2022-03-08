@@ -1,201 +1,219 @@
 <style>
-ul {
-    margin: 0px;
-    padding: 0px;
-}
+    ul {
+        margin: 0px;
+        padding: 0px;
+    }
 
-.footer-section {
-    background: #151414;
-    position: relative;
-}
+    .footer-section {
+        background: #151414;
+        position: relative;
+    }
 
-.footer-content {
-    position: relative;
-    z-index: 2;
-}
-.footer-text-link{
-	color: #a8e3ff;
-	font-size: initial;
-}
-.footer-text-link:hover{
-	color: #ff5e14;
-}
-.footer-text p  {
-    margin-bottom: 14px;
-    font-size: 16px;
-    color: #ffffff;
-    line-height: 28px;
-}
-.footer-social-icon {
-	display: flex;
-    flex-direction: column;
-}
-.footer-social-icon a {
-    color: #fff;
-    font-size: 16px;
-    margin-right: 15px;
-}
+    .footer-content {
+        position: relative;
+        z-index: 2;
+    }
 
-.footer-social-icon i {
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    line-height: 38px;
-    border-radius: 50%;
-}
+    .footer-text-link {
+        color: #a8e3ff;
+        font-size: initial;
+    }
 
-.facebook-bg {
-    background: #3B5998;
-}
+    .footer-text-link:hover {
+        color: #ff5e14;
+    }
 
-.twitter-bg {
-    background: #55ACEE;
-}
+    .footer-text p {
+        margin-bottom: 14px;
+        font-size: 16px;
+        color: #ffffff;
+        line-height: 28px;
+    }
 
-.google-bg {
-    background: #DD4B39;
-}
+    .footer-social-icon {
+        display: flex;
+        flex-direction: column;
+    }
 
-.footer-widget-heading h3 {
-	text-align: left;
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 40px;
-    position: relative;
-}
+    .footer-social-icon a {
+        color: #fff;
+        font-size: 16px;
+        margin-right: 15px;
+    }
 
-.footer-widget-heading h3::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -15px;
-    height: 2px;
-    width: 50px;
-    background: #ff5e14;
-}
+    .footer-social-icon i {
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 38px;
+        border-radius: 50%;
+    }
 
-.footer-widget ul li {
-    display: inline-block;
-    /* width: 50%; */
-    margin-bottom: 12px;
-}
+    .facebook-bg {
+        background: #3B5998;
+    }
 
-.footer-widget ul li a:hover {
-    color: #ff5e14;
-}
+    .twitter-bg {
+        background: #55ACEE;
+    }
 
-.footer-widget ul li a {
+    .google-bg {
+        background: #DD4B39;
+    }
 
-	display: flex;
-    align-items: center;
-    flex-direction: row;
-	font-size: initial;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: capitalize;
-}
+    .footer-widget-heading h3 {
+        text-align: left;
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 40px;
+        position: relative;
+    }
 
-.mail-section {
-    border-left: 2px solid #ff5e14;
-}
+    .footer-widget-heading h3::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -15px;
+        height: 2px;
+        width: 50px;
+        background: #ff5e14;
+    }
 
-.copyright-area {
-    background: #202020;
-    padding: 25px 0;
-}
+    .footer-widget ul li {
+        display: inline-block;
+        /* width: 50%; */
+        margin-bottom: 12px;
+    }
 
-.copyright-text p {
-    margin: 0;
-    font-size: 14px;
-    color: #878787;
-}
+    .footer-widget ul li a:hover {
+        color: #ff5e14;
+    }
 
-.copyright-text p a {
-    color: #ff5e14;
-}
+    .footer-widget ul li a {
 
-.footer-menu li {
-    display: inline-block;
-    margin-left: 20px;
-}
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        font-size: initial;
+        color: #ffffff;
+        text-decoration: none;
+        text-transform: capitalize;
+    }
 
-.footer-menu li:hover a {
-    color: #ff5e14;
-}
-.footer-menu li a {
-    font-size: 18px;
-    text-decoration: none;
-    color: #ffffff;
-}
-.p-0{
-	display: flex;
-flex-direction: column;}
+    .mail-section {
+        border-left: 2px solid #ff5e14;
+    }
 
-.footer-widget{
-	margin-left: 10px;
-}
+    .copyright-area {
+        background: #202020;
+        padding: 25px 0;
+    }
 
-.col-xl-3,.col-xl-2{
-	padding: 0px;
-}
+    .copyright-text p {
+        margin: 0;
+        font-size: 14px;
+        color: #878787;
+    }
 
-.footer-grid{
+    .copyright-text p a {
+        color: #ff5e14;
+    }
 
-	display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-@media screen and (max-width: 1998px){
+    .footer-menu li {
+        display: inline-block;
+        margin-left: 20px;
+    }
 
-	.footer-grid{
-		display: grid;
-		justify-content: space-around;
-	 grid-template-columns: auto auto auto auto auto;
-	}
-}
-@media screen and (max-width: 1024px){
+    .footer-menu li:hover a {
+        color: #ff5e14;
+    }
 
-.footer-grid{
-	display: flex;
-justify-content: space-between;
-flex-wrap: wrap;;
+    .footer-menu li a {
+        font-size: 18px;
+        text-decoration: none;
+        color: #ffffff;
+    }
 
-}
-}
-@media screen and (max-width: 991px){
-.footer-grid{
-	display: flex;
-justify-content: space-between;
-flex-wrap: wrap;}
-}
-@media screen and (max-width: 768px){
-.footer-grid{
-	display: grid;
- grid-template-columns: auto auto auto;
-}
-}
-@media screen and (max-width: 425px){
+    .p-0 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer-widget {
+        margin-left: 10px;
+    }
+
+    .col-xl-3,
+    .col-xl-2 {
+        padding: 0px;
+    }
+
+    .footer-grid {
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    @media screen and (max-width: 1998px) {
+
+        .footer-grid {
+            display: grid;
+            justify-content: space-around;
+            grid-template-columns: auto auto auto auto auto;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            ;
+
+        }
+    }
+
+    @media screen and (max-width: 991px) {
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        .footer-grid {
+            display: grid;
+            grid-template-columns: auto auto auto;
+        }
+    }
+
+    @media screen and (max-width: 425px) {
 
 
-.footer-grid{
-	display: grid;
- grid-template-columns: auto auto;
-}
-}
-@media screen and (max-width: 300px){
+        .footer-grid {
+            display: grid;
+            grid-template-columns: auto auto;
+        }
+    }
 
-.footer-grid{
-	display: flex;
-}}
+    @media screen and (max-width: 300px) {
+
+        .footer-grid {
+            display: flex;
+        }
+    }
 
 
 
-@media (min-width: 768px){
-.col-md-6 {
-    /* width: 100%!important; */
-}
-}
+    @media (min-width: 768px) {
+        .col-md-6 {
+            /* width: 100%!important; */
+        }
+    }
 </style>
 <footer class="footer-section">
     <!--footer start-->
@@ -209,9 +227,12 @@ flex-wrap: wrap;}
                             <h3>About</h3>
                         </div>
                         <ul class="p-0">
-                            <li><a href="#">Contact&nbsp;Us</a></li>
-                            <li><a href="#">About&nbsp;Us</a></li>
-                            <li><a href="#">Stories</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/footer/AboutUs.php">Contact&nbsp;Us</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/footer/contactUs.php">About&nbsp;Us</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/footer/Stories.php">Stories</a></li>
                         </ul>
                     </div>
                 </div>
@@ -222,13 +243,17 @@ flex-wrap: wrap;}
                             <h3>Help</h3>
                         </div>
                         <ul class="p-0">
-                            <li><a href="#">Track&nbsp;your&nbsp;order</a></li>
-                            <li><a href="#">Payments</a></li>
-                            <li><a href="#">Shipping</a></li>
-                            <li><a href="#">Cancellation&nbsp;Return</a><br></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/profile/?section=order">Track&nbsp;your&nbsp;order</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/profile/?section=order">Payments</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/profile/?section=order">Shipping</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/profile/?section=order">Cancellation&nbsp;Return</a><br></li>
                         </ul>
                     </div>
-				<br>
+                    <br>
                 </div>
 
                 <div class="col-xl-2 col-lg-2 col-md-6 mb-30">
@@ -237,10 +262,14 @@ flex-wrap: wrap;}
                             <h3>Policy</h3>
                         </div>
                         <ul class="p-0">
-                            <li><a href="#">Return&nbsp;Policy</a></li>
-                            <li><a href="#">Term&nbsp;of&nbsp;use</a></li>
-                            <li><a href="#">Security</a></li>
-                            <li><a href="#">Privacy</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/footer/returnPolicy.php">Return&nbsp;Policy</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/footer/TermOfUse.php">Term&nbsp;of&nbsp;use</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/footer/Security.php">Security</a></li>
+                            <li><a href=" <?php global $domain;
+                                            echo $domain; ?>/footer/Privacy.php">Privacy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -267,7 +296,7 @@ flex-wrap: wrap;}
                             <h3>Mail&nbsp;Us</h3>
                         </div>
                         <div class="footer-text mb-25">
-                            <a class="footer-text-link" href="">mailus@gmail.com</a>
+                            <a class="footer-text-link" href=" mailto: abc@example.com">mailus@gmail.com</a>
                         </div>
                         <div class="footer-widget-heading my-5">
                             <h3>FAQs</h3>
@@ -289,14 +318,17 @@ flex-wrap: wrap;}
                 <div class="col-xl-6 col-lg-6 text-lg-left">
                     <div class="footer-menu">
                         <ul>
-                            <li class="mx-auto"><a href="#">Advertise</a></li>
-                            <li class="mx-5"><a href="#">Giftcards</a></li>
+                            <li class="mx-auto"><a href=" <?php global $domain;
+                                                            echo $domain; ?>/footer/Advertise.php">Advertise</a></li>
+                            <li class="mx-5"><a href=" <?php global $domain;
+                                                        echo $domain; ?>/footer/Giftcards.php">Giftcards</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 text-center text-right">
                     <div class="copyright-text">
-                        <p>&copy; <a href=""> Thebrowngirl</a> - All Right Reserved </p>
+                        <p>&copy; <a href=" <?php global $domain;
+                                            echo $domain; ?>/footer/AboutUs.php"> Thebrowngirl</a> - All Right Reserved </p>
                     </div>
                 </div>
             </div>

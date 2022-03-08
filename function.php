@@ -1,6 +1,7 @@
 <?php
 
 include 'db.php';
+include('config.php');
 
 //echo json_encode(selectTable('user'));
 function selectTable($table)

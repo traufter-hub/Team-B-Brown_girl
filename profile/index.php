@@ -1,3 +1,6 @@
+<?php
+include('../function.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -112,7 +115,14 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script>
     const mainPart = document.getElementById('mainPart');
-    loadSection('profile');
+
+    let section = 'profile';
+    const urlParams = new URLSearchParams(location.search);
+    section = urlParams.get("section");
+
+    if (section == null) section = 'profile'
+
+    loadSection(section);
 
     var userDATA = JSON.parse('<?php echo json_encode(selectUserData()); ?>');
 
@@ -151,7 +161,7 @@
         //console.log(1);
     }
     loadLastAtemptData(" <?php echo selectUserData()->lastAttempt; ?> ");
-    const urlParams = new URLSearchParams(location.search);
+    //const urlParams = new URLSearchParams(location.search);
     const idInfo = urlParams.get("newID");
     if (idInfo == 1) {
         showOtpModal();

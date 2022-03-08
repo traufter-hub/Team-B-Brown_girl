@@ -1,3 +1,6 @@
+<?php
+include('../function.php');
+?>
 <!doctype html>
 <html lang="en">
 
@@ -424,10 +427,16 @@
                     success: function(data) {
                         alert(data);
                         if (data == "Order Placed.") {
+
+                            alert(data);
                             const myTimeout = setTimeout(doReload, 3000);
 
+
+                            loc = '<?php global $domain;
+                                    echo $domain; ?>/profile/?section=order';
+
                             function doReload() {
-                                window.location.replace(site + "/");
+                                window.location.replace(loc);
                             }
                         }
                         if (data == "Please Verify your number") {
