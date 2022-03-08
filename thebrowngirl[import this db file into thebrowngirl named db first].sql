@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 07, 2022 at 12:52 PM
+-- Generation Time: Mar 08, 2022 at 09:39 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -110,10 +110,7 @@ CREATE TABLE `checkoutlist` (
 INSERT INTO `checkoutlist` (`product_id`, `user_id`, `amount`) VALUES
 ('p1', 37, 1),
 ('p2', 37, 1),
-('p4', 37, 1),
-('p7', 1, 1),
-('p8', 1, 1),
-('p9', 1, 1);
+('p4', 37, 1);
 
 -- --------------------------------------------------------
 
@@ -299,7 +296,13 @@ CREATE TABLE `orders` (
 
 INSERT INTO `orders` (`order_id`, `user_id`, `product_id`, `order_amount`, `address`, `orderTime`, `method`, `status`, `arival`) VALUES
 (63, 1, 'p4', 10170, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-07 12:28:09pm', 'net', 'NA', 'NA'),
-(64, 1, 'p4', 10170, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-07 12:29:34pm', 'card', 'NA', 'NA');
+(64, 1, 'p4', 10170, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-07 12:29:34pm', 'card', 'NA', 'NA'),
+(65, 1, 'p4', 10170, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-08 09:17:18am', 'net', 'NA', 'NA'),
+(66, 1, 'p7', 1000, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-08 09:17:18am', 'net', 'NA', 'NA'),
+(67, 1, 'p8', 1100, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-08 09:17:18am', 'net', 'NA', 'NA'),
+(68, 1, 'p9', 5999, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-08 09:17:18am', 'net', 'NA', 'NA'),
+(69, 1, 'p4', 10170, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-08 09:18:06am', 'card', 'NA', 'NA'),
+(70, 1, 'p4', 10170, '{\"user_id\":\"1\",\"name\":\"Ganesh Ghutiya\",\"mobile\":\"9853456545\",\"pincode\":\"123422\",\"locality\":\"Khul\",\"building\":\"KH-67\",\"landmark\":\"Power Houses\",\"city\":\"Silvassaaa\",\"state\":\"Dadra and Nagar Haveli\",\"sr\":\"9\"}', '2022-03-08 09:18:26am', 'cod', 'NA', 'NA');
 
 -- --------------------------------------------------------
 
@@ -561,7 +564,7 @@ INSERT INTO `user` (`user_id`, `email`, `password`, `name`, `lastName`, `gender`
 (26, 'abc@xyz1.com', '987', 'qq', '', '', '', '984847918', 0, 0, '2022-02-24 11:53:53am'),
 (31, 'bn@bn.com', '123', 'bb', 'bn', '', '', '9737354410', 0, 0, '2022-02-25 11:10:37am'),
 (22, 'csed08@laxmi.edu.in', '123', 'Ganesh Ghutiya', '', '', '', '9737354410', 0, 0, '2022-02-24 11:53:53am'),
-(1, 'g@g.com', '123', 'Ganesh', 'Ghutiya', 'm', '2021-08-21', '9737354410', 1, 3, '2022-03-06 06:09:24pm'),
+(1, 'g@g.com', '123', 'Ganesh', 'Ghutiya', 'm', '2021-08-21', '9737354410', 1, 1, '2022-03-08 09:16:15am'),
 (14, 'ganeshghutiya@live.com', '123', 'Ganesh Ghutiya', '', '', '', '1234567890', 0, 0, '2022-02-24 11:53:53am'),
 (21, 'ganeshghutiya@live.coms', 'd', 'fdg', '', '', '', '984 847918', 0, 0, '2022-02-24 11:53:53am'),
 (36, 'ganeshghutiya@live.comsgg', '123', 'Ganesh', 'Ghutiya', '', '', '9737354410', 0, 1, '2022-03-03 06:18:54pm'),
@@ -733,7 +736,7 @@ ALTER TABLE `offers`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `product_images`
