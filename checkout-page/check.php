@@ -232,73 +232,7 @@ include('../function.php');
                 <div class="col-lg-3">
                 </div>
             </div>
-            <!-- <div class="row mx-3 my-5">
-                <div class="col-lg-8 OS">
-                    <div class="row heading">
-                        <h3>Payment details</h3>
-                    </div>
-                    <div class="row">
-                        <form onsubmit="event.preventDefault();pay();">
-                            <br>
-                            <div class="row">
-                                <div class="rad my-1">
-                                    &nbsp;&nbsp;<div class="form-check">
-                                        <input required id="upi" class="form-check-input" type="radio" name="flexRadioDefault" value="upi">
-                                        <label for="upi" class="form-check-label">
-                                            UPI
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="rad my-1">
-
-                                    &nbsp;&nbsp;<div class="form-check">
-                                        <input required id="card" class="form-check-input" type="radio" name="flexRadioDefault" value="card">
-                                        <label for="card" class="form-check-label">
-                                            Credit/Debit/ATM Card
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="rad my-1">
-
-
-                                    &nbsp;&nbsp;<div class="form-check">
-                                        <input required id="net" class="form-check-input" type="radio" name="flexRadioDefault" value="net">
-                                        <label for="net" class="form-check-label">
-                                            Net Banking
-                                        </label>
-                                    </div>
-
-
-
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="rad my-1">
-
-                                    &nbsp;&nbsp;<div class="form-check">
-                                        <input required id="cod" class="form-check-input" type="radio" name="flexRadioDefault" value="cod">
-                                        <label for="cod" class="form-check-label">
-                                            Cash on Delivery
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col mx-4 my-4"><button type="submit" class="buttons">Pay</button></div>
-                            </div>
-
-                        </form>
-                        <br>
-                    </div>
-                </div>
-
-
-                <div class="col-lg-3"></div>
-            </div> -->
+            
         </div>
         </div>
     </section>
